@@ -67,7 +67,8 @@ void main() {
   try {
     // Decrypts the file which has been just encrypted and tries to save it under
     // another name than source file name.
-    decFilepath = crypt.decryptFileSync(encFilepath, './example/testfile_new.txt');
+    decFilepath =
+        crypt.decryptFileSync(encFilepath, './example/testfile_new.txt');
     print('The decryption has been completed successfully.');
     print('Decrypted file 2: $decFilepath');
     print('File content: ' + File(decFilepath).readAsStringSync());
@@ -84,7 +85,8 @@ void main() {
     // Decrypts the file to the same name as previous one but before sets
     // another overwrite mode 'AesCryptFnMode.auto'. See what will happens.
     crypt.setOverwriteMode(AesCryptOwMode.rename);
-    decFilepath = crypt.decryptFileSync(encFilepath, './example/testfile_new.txt');
+    decFilepath =
+        crypt.decryptFileSync(encFilepath, './example/testfile_new.txt');
     print('The decryption has been completed successfully.');
     print('Decrypted file 3: $decFilepath');
     print('File content: ' + File(decFilepath).readAsStringSync() + '\n');
@@ -94,7 +96,6 @@ void main() {
       print(e.message);
     }
   }
-
 
   print('Done.');
 }
